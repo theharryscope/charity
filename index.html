@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aashik - Empowering Communities, Inspiring Change</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#F5B738',
+              yellowHover: '#E5A625',
+              dark: '#0B2C24',
+              darkGreen: '#07241D',
+              forest: '#103C32',
+              lightBg: '#FBFBFA',
+              cardBg: '#F5F6F4',
+              muted: '#687270'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="base-styling">
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+  </style>
+<style data-purpose="animations">
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 25s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="bg-brand-lightBg text-slate-800 antialiased selection:bg-brand-yellow selection:text-brand-dark">
+<!-- BEGIN: Preloader -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-brand-darkGreen transition-opacity duration-500" id="preloader">
+<div class="flex flex-col items-center">
+<div class="h-12 w-12 rounded-full border-4 border-brand-yellow/20 border-t-brand-yellow animate-spin"></div>
+<span class="mt-4 font-bold text-white tracking-wider text-sm uppercase">Loading Aashik...</span>
+</div>
+</div>
+<!-- END: Preloader -->
+<!-- BEGIN: TopAnnouncementBar -->
+<section class="bg-black text-white text-xs md:text-sm py-2 px-4 relative z-40 border-b border-white/10">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center space-x-2">
+<span class="bg-brand-yellow text-brand-dark font-extrabold px-2 py-0.5 rounded text-[11px] uppercase tracking-wide">Black Friday</span>
+<span class="text-zinc-300">Up to 60% off all Themes. Premium WordPress Themes on progress.</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="hidden sm:inline-block text-zinc-400">Coupon Code: <strong class="text-brand-yellow tracking-widest font-mono">BLACKFRIDAY26</strong></span>
+<a class="bg-brand-yellow text-brand-dark text-xs font-bold px-3 py-1 rounded hover:bg-brand-yellowHover transition-colors" href="#donate-section">
+          Get Now
+        </a>
+</div>
+</div>
+</section>
+<!-- END: TopAnnouncementBar -->
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-40 bg-brand-darkGreen/95 backdrop-blur-md border-b border-white/10 text-white transition-all">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center space-x-2.5" href="#">
+<span class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-brand-dark font-black text-2xl shadow-inner">
+<i class="fa-solid fa-hands-holding-child"></i>
+</span>
+<span class="text-2xl font-bold tracking-tight text-white">Aashik<span class="text-brand-yellow">.</span></span>
+</a>
+<!-- Desktop Navigation Menu -->
+<nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+<a class="text-brand-yellow flex items-center gap-1 transition-colors" href="#hero">Home <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
+<a class="text-zinc-200 hover:text-brand-yellow transition-colors" href="#about">About Us</a>
+<a class="text-zinc-200 hover:text-brand-yellow transition-colors" href="#services">Services</a>
+<a class="text-zinc-200 hover:text-brand-yellow transition-colors" href="#programs">Blog</a>
+<a class="text-zinc-200 hover:text-brand-yellow transition-colors flex items-center gap-1" href="#causes">Pages <i class="fa-solid fa-chevron-down text-[10px]"></i></a>
+<a class="text-zinc-200 hover:text-brand-yellow transition-colors" href="#footer">Contact Us</a>
+</nav>
+<!-- Right Action CTA -->
+<div class="hidden sm:flex items-center space-x-4">
+<a class="inline-flex items-center justify-center bg-brand-yellow hover:bg-brand-yellowHover text-brand-dark font-bold text-sm px-6 py-3 rounded-full transition-all transform hover:-translate-y-0.5 shadow-md" href="#donate-section">
+          Donate Now <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+</a>
+</div>
+<!-- Mobile Menu Toggle Button -->
+<div class="lg:hidden flex items-center">
+<button aria-label="Toggle navigation menu" class="text-zinc-300 hover:text-white p-2 focus:outline-none" id="mobile-menu-toggle" type="button">
+<i class="fa-solid fa-bars text-xl"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Dropdown Menu -->
+<div class="hidden lg:hidden bg-brand-dark px-4 pt-3 pb-6 border-t border-white/10 space-y-3" id="mobile-nav">
+<a class="block text-brand-yellow font-medium py-1" href="#hero">Home</a>
+<a class="block text-zinc-300 hover:text-white py-1" href="#about">About Us</a>
+<a class="block text-zinc-300 hover:text-white py-1" href="#services">Services</a>
+<a class="block text-zinc-300 hover:text-white py-1" href="#programs">Programs</a>
+<a class="block text-zinc-300 hover:text-white py-1" href="#causes">Pages</a>
+<a class="block text-zinc-300 hover:text-white py-1" href="#footer">Contact Us</a>
+<a class="block w-full text-center bg-brand-yellow text-brand-dark font-bold py-2.5 rounded-full mt-2" href="#donate-section">
+        Donate Now <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+</a>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="relative bg-brand-darkGreen text-white min-h-[640px] lg:min-h-[750px] flex items-center overflow-hidden" id="hero">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Community volunteers rallying together" class="w-full h-full object-cover object-center brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYJiGFojUAaKYo92mvyCubLYz75hHt5HeoIr1otf1ft1-3YClzFFSeU9_zHbKaDKciQDbMFFcxZTcSXjFCsMV85cb69eSaj7-n5aZ6tu6xx3m1lJnapekgFcb--hSE9k4lH6tkPdsEwLeRAvcXBETia2wCZDxjcObT1_R4BmYaRS4I50SjjGki6GYJ4sgmRj8kL4WWmOy5ms_2CC4Tl9EajzXteEmZDJbmm4BWeBo"/>
+<div class="absolute inset-0 bg-gradient-to-r from-brand-darkGreen/95 via-brand-darkGreen/85 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Hero Left Column Content -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Tag badge -->
+<div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-xs font-medium text-brand-yellow">
+<span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
+<span>Driving Positive Change Worldwide</span>
+</div>
+<h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-white">
+            Empowering <br class="hidden sm:inline"/>
+            Communities, Inspiring <br class="hidden sm:inline"/>
+<span class="text-brand-yellow">Change</span>
+</h1>
+<p class="text-base sm:text-lg text-zinc-300 max-w-2xl font-normal leading-relaxed">
+            We bring people together to challenge injustice, amplify unheard voices, and drive collective action that addresses inequality, defends human rights, and builds a more inclusive world.
+          </p>
+<div class="pt-4 flex flex-wrap gap-4 items-center">
+<a class="inline-flex items-center justify-center bg-brand-yellow hover:bg-brand-yellowHover text-brand-dark font-bold px-8 py-4 rounded-full transition-transform hover:scale-105 shadow-lg" href="#volunteer">
+              Become A Volunteer <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Hero Right Column Metric Overlay -->
+<div class="lg:col-span-4 flex justify-start lg:justify-end">
+<div class="bg-black/60 backdrop-blur-md border border-white/15 rounded-3xl p-6 sm:p-8 max-w-xs text-left shadow-2xl">
+<div class="text-4xl sm:text-5xl font-black text-brand-yellow mb-2 tracking-tight">180<span class="text-white">+</span></div>
+<h4 class="text-lg font-bold text-white mb-2">Active Volunteers</h4>
+<p class="text-xs sm:text-sm text-zinc-300 leading-normal">
+              A passionate network dedicated to serving on the ground and creating lasting community impact every day.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: MarqueeTicker -->
+<section class="bg-brand-yellow py-4 overflow-hidden border-y border-amber-500/20 select-none">
+<div class="animate-marquee whitespace-nowrap text-brand-dark font-bold uppercase tracking-wider text-sm sm:text-base flex items-center space-x-8">
+<span>★ Community Support</span>
+<span>★ Health Support</span>
+<span>★ Volunteer Impact</span>
+<span>★ Future Ready Generations</span>
+<span>★ Human Rights Advocacy</span>
+<span>★ Education For Every Child</span>
+<span>★ Emergency Relief</span>
+<!-- Duplicate for seamless infinite loop -->
+<span>★ Community Support</span>
+<span>★ Health Support</span>
+<span>★ Volunteer Impact</span>
+<span>★ Future Ready Generations</span>
+<span>★ Human Rights Advocacy</span>
+<span>★ Education For Every Child</span>
+<span>★ Emergency Relief</span>
+</div>
+</section>
+<!-- END: MarqueeTicker -->
+<!-- BEGIN: AboutSection -->
+<section class="py-20 lg:py-28 bg-white overflow-hidden" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Visual Collage -->
+<div class="lg:col-span-6 relative flex justify-center items-center">
+<div class="relative w-full max-w-lg aspect-square">
+<!-- Circular Main Photo -->
+<div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden border-8 border-brand-lightBg shadow-2xl absolute top-0 left-0">
+<img alt="Protest and community gathering" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEHToZZIDTsTbmEEEbQWAXA9Q4xjGNXnKv_grhHIjc5d-Iwr__AyHUV1g-xg3deJ0oJnpjrDNvrRrq1XNh5oDO9xGwsa4VK4AsncxjEEt7QtZcgjVz0z5RXhdjzhtBNimNDzp8we4VXLckGxIO7n-X97-3AbMcoVl5-Oh5pbr-VZhNCEqe7kSkvpx7lhiaQniKM1uF9iIYM7eMM9tKTOsXxdX3RR5gQo6gwQXE9uU"/>
+</div>
+<!-- Overlapping Secondary Image -->
+<div class="w-56 h-56 sm:w-72 sm:h-72 rounded-3xl overflow-hidden border-4 border-white shadow-2xl absolute bottom-2 right-2">
+<img alt="Volunteers supporting each other" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqfhs8MjRzBBu8ubTlVk1S6JbKRS_rsigww6WSkj1t9hzJCWfnuDk5px_Hkkdork4Uqsczpsmu84uyMFHUV8S1R2EoXMH_8WjqtixIV9Jc-qs6Ns3MVQhIFBDHK5If8qw3MhpV_RICGUqJOcgLpz3kekmgkeS1Sys2KjvyUOqiBXLycDN_UcCwyFnPW2kuaSKnK743wMpP6qBSsVfa8VH8w_9gweXlMINmYylRgMg"/>
+</div>
+<!-- Experience Badge Pill -->
+<div class="absolute bottom-10 left-10 sm:left-14 bg-brand-yellow text-brand-dark p-4 rounded-2xl shadow-xl flex items-center space-x-3">
+<span class="text-3xl font-extrabold leading-none">25+</span>
+<span class="text-xs font-bold uppercase leading-tight">Years Of<br/>Experience</span>
+</div>
+</div>
+</div>
+<!-- Right Content Block -->
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-brand-forest">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></span>
+<span>About Our NGO</span>
+</div>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
+            Movement Built Hope and Humanity
+          </h2>
+<p class="text-brand-muted text-base leading-relaxed">
+            We believe in the power of collective compassion. Through dedicated efforts and inclusive programs, we support vulnerable communities, provide shelter, defend dignity, and create stepping stones for long-term growth.
+          </p>
+<!-- Highlight Box -->
+<div class="bg-brand-cardBg rounded-2xl p-6 border border-zinc-200/60 flex items-start space-x-4">
+<div class="w-12 h-12 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center text-brand-dark text-lg shadow-sm">
+<i class="fa-solid fa-users-gear"></i>
+</div>
+<div>
+<h4 class="text-lg font-bold text-brand-dark mb-1">Empowering Communities</h4>
+<p class="text-sm text-brand-muted leading-relaxed">
+                We work closely with community leaders to identify real needs, providing custom sustainable interventions.
+              </p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="pt-4 flex flex-wrap items-center gap-6">
+<a class="inline-flex items-center justify-center bg-brand-yellow hover:bg-brand-yellowHover text-brand-dark font-bold text-sm px-7 py-3.5 rounded-full transition-all" href="#services">
+              More About Us <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+</a>
+<button class="inline-flex items-center space-x-3 text-brand-dark font-bold text-sm hover:text-brand-yellow transition-colors" type="button">
+<span class="w-11 h-11 rounded-full border-2 border-brand-dark flex items-center justify-center text-xs">
+<i class="fa-solid fa-play ml-0.5"></i>
+</span>
+<span>Watch Our Video</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: ServicesSection -->
+<section class="py-20 bg-brand-lightBg" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Our Services</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2 tracking-tight">Our Actions for Social Change</h2>
+<p class="text-sm sm:text-base text-brand-muted mt-3">We fuel compassion into action by implementing community-led programs, advocating for social justice, and promoting education, health, and equality.</p>
+</div>
+<!-- Service Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-amber-50 group-hover:bg-brand-yellow transition-colors flex items-center justify-center text-brand-yellow group-hover:text-brand-dark text-2xl mb-6">
+<i class="fa-solid fa-hand-holding-heart"></i>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Community Development</h3>
+<p class="text-sm text-brand-muted leading-relaxed mb-6">
+              Strengthening local communities through education programs, skill building workshops, and micro-infrastructure projects.
+            </p>
+</div>
+<a class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-brand-dark hover:text-brand-yellow transition-colors" href="#contact">
+            Read More <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-amber-50 group-hover:bg-brand-yellow transition-colors flex items-center justify-center text-brand-yellow group-hover:text-brand-dark text-2xl mb-6">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Education &amp; Awareness</h3>
+<p class="text-sm text-brand-muted leading-relaxed mb-6">
+              Delivering awareness campaigns, training sessions, and educational materials to youth and underserved neighborhoods.
+            </p>
+</div>
+<a class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-brand-dark hover:text-brand-yellow transition-colors" href="#contact">
+            Read More <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between group">
+<div>
+<div class="w-14 h-14 rounded-2xl bg-amber-50 group-hover:bg-brand-yellow transition-colors flex items-center justify-center text-brand-yellow group-hover:text-brand-dark text-2xl mb-6">
+<i class="fa-solid fa-scale-balanced"></i>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Human Rights Advocacy</h3>
+<p class="text-sm text-brand-muted leading-relaxed mb-6">
+              Social justice, legal support, and policy reform direct actions that defend and protect marginalized populations.
+            </p>
+</div>
+<a class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-brand-dark hover:text-brand-yellow transition-colors" href="#contact">
+            Read More <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Reviews Callout Strip -->
+<div class="mt-14 py-4 px-6 rounded-2xl bg-white border border-slate-200 flex flex-wrap items-center justify-center sm:justify-between gap-4 text-center sm:text-left">
+<div class="flex items-center space-x-3">
+<span class="bg-brand-yellow/30 text-brand-dark text-xs font-black px-2.5 py-1 rounded">NEWS</span>
+<span class="text-xs sm:text-sm font-semibold text-slate-700">Help Our Kids with Education, Food, Health Support. <a class="text-brand-forest underline hover:text-brand-yellow" href="#donate-section">See Details</a></span>
+</div>
+<div class="flex items-center space-x-2 text-xs sm:text-sm font-bold text-slate-800">
+<span class="text-amber-500 font-extrabold text-base">4.9</span>
+<div class="text-amber-400 space-x-0.5 text-xs">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+<span class="text-slate-500 font-normal">Over 3000 Reviews</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ServicesSection -->
+<!-- BEGIN: WhyChooseUsSection -->
+<section class="py-20 lg:py-28 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Text Features -->
+<div class="lg:col-span-6 space-y-6">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Why Choose Us</span>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
+            What Makes our Impact Strong
+          </h2>
+<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+            We approach every initiative with compassion, operate with full transparency, and focus on creating sustainable impact that improves lives.
+          </p>
+<ul class="space-y-4 pt-2">
+<li class="flex items-start space-x-3.5">
+<span class="w-8 h-8 rounded-full bg-brand-yellow/30 text-brand-dark flex items-center justify-center flex-shrink-0 mt-0.5 text-sm">
+<i class="fa-solid fa-check"></i>
+</span>
+<span class="text-slate-700 font-medium text-sm sm:text-base">We operate with complete openness, clearly communicating.</span>
+</li>
+<li class="flex items-start space-x-3.5">
+<span class="w-8 h-8 rounded-full bg-brand-yellow/30 text-brand-dark flex items-center justify-center flex-shrink-0 mt-0.5 text-sm">
+<i class="fa-solid fa-check"></i>
+</span>
+<span class="text-slate-700 font-medium text-sm sm:text-base">Ensuring every program is guided by empathy, dignity, in community.</span>
+</li>
+<li class="flex items-start space-x-3.5">
+<span class="w-8 h-8 rounded-full bg-brand-yellow/30 text-brand-dark flex items-center justify-center flex-shrink-0 mt-0.5 text-sm">
+<i class="fa-solid fa-check"></i>
+</span>
+<span class="text-slate-700 font-medium text-sm sm:text-base">Our initiatives focus on long-term solution that empower community.</span>
+</li>
+</ul>
+<div class="pt-4">
+<a class="inline-flex items-center justify-center bg-brand-yellow hover:bg-brand-yellowHover text-brand-dark font-bold text-sm px-8 py-3.5 rounded-full transition-all" href="#about">
+              Learn More <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Right Image Grid with Floating Badge -->
+<div class="lg:col-span-6 relative">
+<div class="relative grid grid-cols-2 gap-4">
+<img alt="Empowered volunteer" class="w-full h-80 object-cover rounded-3xl shadow-lg mt-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVWUk29_w37R6ptbUf0elYslUEn_SQM6IZeoUs1DI-nrH_xjmQ58h8iAbWZ99c3D83ttNslz5KJ0YYJU2pBVIFxqai866RRhbvNsauf2TsEC9mKHFu2sFMHxyvdHRz6HYOOWv0jI0W6layuyPpX5TwjSAziDzpbOgoSTPo1MFNQcbnccyZIdDgiDjlU0oxtlIanW3jf9lTl8xUeaDv7CYxh2go1KepV8XhLYBimrs"/>
+<img alt="Demonstration for rights" class="w-full h-96 object-cover rounded-3xl shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABpCQoBiNTig3O-8wODapj8bHVCkaIQBzdMZRcdytxKIEXkkikBhb9vM6ohmXJL8EyQpdoCEicXuCNByXAXRttgZY_DhLgVkaE2JMTRKQ7nZmd4AYBaw7MC4gRRXymc2LHWkywnMLLYvmBWvTS5gEKhDBsFU4QsDMN-QluGLAjuSC7Xm2b77yRVmx9VTwNVYxgoAo5Qe-wOY1uNA7l6oFGA5MXq3c6uojELzQwwJI"/>
+<!-- Floating Call Support Badge -->
+<div class="absolute -top-4 -right-2 bg-white rounded-2xl p-4 shadow-xl border border-slate-100 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-brand-dark text-base">
+<i class="fa-solid fa-phone"></i>
+</div>
+<div>
+<span class="block text-[11px] uppercase tracking-wider text-slate-400 font-bold">Call Us</span>
+<span class="text-sm font-black text-brand-dark">+1 (234) 567 - 789</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: WhyChooseUsSection -->
+<!-- BEGIN: MeasurableImpactSection -->
+<section class="bg-brand-darkGreen text-white py-20 lg:py-28 relative">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Top banner flex header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between pb-16 border-b border-white/10 gap-6">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Our Benefits</span>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-2 max-w-xl">
+            Thoughtful Actions with Measurable Impact
+          </h2>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+<p class="text-xs sm:text-sm text-zinc-300 max-w-xs">
+            We plan and execute every initiative with care, clarity, and accountability by setting clear goals and tracking outcomes.
+          </p>
+<a class="inline-flex items-center justify-center bg-brand-yellow text-brand-dark font-bold text-sm px-6 py-3 rounded-full hover:bg-brand-yellowHover transition-all flex-shrink-0" href="#footer">
+            Contact Us <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Stats & Visuals Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 items-center">
+<!-- Number card -->
+<div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
+<div class="text-4xl sm:text-5xl font-black text-white mb-2">12,000<span class="text-brand-yellow">+</span></div>
+<div class="w-12 h-12 rounded-xl bg-brand-yellow/20 flex items-center justify-center text-brand-yellow text-xl my-4">
+<i class="fa-solid fa-heart-circle-check"></i>
+</div>
+<h4 class="text-xl font-bold text-white mb-2">Lives Impacted</h4>
+<p class="text-xs sm:text-sm text-zinc-400">Providing education, healthcare, and support programs that have positively affected thousands.</p>
+</div>
+<!-- Center Image of Children/Volunteers -->
+<div class="rounded-3xl overflow-hidden shadow-2xl h-80">
+<img alt="Children receiving education and support" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXgjQ9GnS62APLA-X4VFHcu6yAIUspPs07ryBoQwACrVEUQ2exJPiVnt3ndbatjJ-1UH2LMAM-V97khcPVwuOjEs50aqmFGZ3LWCUP3DIkczCA8K-9SXC69i_XyGQ33DsmGCwJkpBGmxkdGJCwM_HHPWJT_6-1KFDHoRQ6xwv-KdtAWMnX-XrqVbc8UoEt9tPTqiSKh2a0qmtks6Fgkz_wjRSXNVOl-TyiKh7gRjg"/>
+</div>
+<!-- Features card -->
+<div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
+<div class="w-12 h-12 rounded-xl bg-brand-yellow/20 flex items-center justify-center text-brand-yellow text-xl mb-4">
+<i class="fa-solid fa-chart-line"></i>
+</div>
+<h4 class="text-xl font-bold text-white mb-2">Real Community Impact</h4>
+<p class="text-xs sm:text-sm text-zinc-400 mb-4">Every program we run is designed to address genuine community needs.</p>
+<ul class="text-xs sm:text-sm text-zinc-300 space-y-2">
+<li class="flex items-center"><i class="fa-solid fa-circle-check text-brand-yellow mr-2"></i> Ensuring that every initiative delivers</li>
+<li class="flex items-center"><i class="fa-solid fa-circle-check text-brand-yellow mr-2"></i> We track outcomes &amp; monitor progress</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- END: MeasurableImpactSection -->
+<!-- BEGIN: ProgramsSection -->
+<section class="py-20 lg:py-28 bg-white" id="programs">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Our Programs</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2 tracking-tight">Initiatives that Empower</h2>
+<p class="text-sm sm:text-base text-brand-muted mt-3">Our programs are thoughtfully designed to address real community needs, promote self-reliance, and create sustainable opportunities in education, health, and equal rights.</p>
+</div>
+<!-- 3-Column Program Cards with Image Overlays -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Program 1 -->
+<div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 aspect-[4/5] bg-slate-900">
+<img alt="Health &amp; Wellness Outreach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACUUgJpLQM1lIDKYSV6lRB-4jImDb-jTStNxvOx_TpaCL6r1GjRYLhfl05L1DRQh4PlF3Q1CqsBh0YGuU3xBwcBXeYwZ5vLM8P_20QC5LFCje96PkdEnkXLPSw7yxp7MP-9yrzZpAOVCQpMsK-iy0Lm76MeS_TjEvZsF8S89aa2vxL-BkQGk4F-5LX0ExA28QXil7cy8bVaaVQvgwssj_V8TIPDR3i7srGcJq_CAU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-yellow block mb-1">Community Health</span>
+<h3 class="text-2xl font-bold text-white group-hover:text-brand-yellow transition-colors">Health &amp; Wellness Outreach</h3>
+</div>
+</div>
+<!-- Program 2 -->
+<div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 aspect-[4/5] bg-slate-900">
+<img alt="Human Rights Advocacy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDERYLNqh8Ow24qAJHXeGzXEPBQPP-8MwUV8HjAAgPRsfWkS5hqQe9rF9To7ZeJ9dbZXQSnqt3-L7TxgImgH_Xwz4f-5VJQK7FuANkRDER4Fj1VpqvsImbcTViRSF8x33AQArzuf36ncs7Wm0Wd4CD7xwPR48PluwVz4BAS8Yz_XcRhXYaZtAePmeD1q9zXUOA3crUXn47GO45-9tFTBVDe_YfJ3I8asPLchDNXIJo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-yellow block mb-1">Legal Awareness</span>
+<h3 class="text-2xl font-bold text-white group-hover:text-brand-yellow transition-colors">Human Rights Advocacy</h3>
+</div>
+</div>
+<!-- Program 3 -->
+<div class="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 aspect-[4/5] bg-slate-900">
+<img alt="Disaster Relief &amp; Recovery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxo9F8TZad4mvHXD99M9hBizHgsOFJrggKgziDZdYCvvYzktX3VTfl8xbuQusx7zG3NETKcieXPW-wfg_knTfSCb1WJ0e1eMFTDBvitdKbhmZ2aI-K7qvY49gFmy42Mmiyw80OD3pEgxWfxIuoQNQHIhIUb4aVAs_GsMSrhFQv05baeNE98wAECUKUIMwgoTgUBNAzig0O9et-DDEFpzyxp4hwacDcIMMv5j8DOoI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-yellow block mb-1">Crisis Support</span>
+<h3 class="text-2xl font-bold text-white group-hover:text-brand-yellow transition-colors">Disaster Relief &amp; Recovery</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ProgramsSection -->
+<!-- BEGIN: CausesSection -->
+<section class="py-20 lg:py-28 bg-brand-lightBg border-t border-slate-200" id="causes">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Single Hero Portrait -->
+<div class="lg:col-span-5">
+<div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[3/4]">
+<img alt="Young female advocate smiling" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfNljrc07lFZ14E9ccmc3ur36XJZBxRWUgQEbd09VE1L9XkRVIsllorugX6cF9S2ytE4Z0nZQgVlY51SACIb6YcLoRsBPcKj_fUKKiA0-apwOfpvViSxu2p6KY-SSvaUnk1dNVH6tfcNY5b_-mxqPYuKagD5iFYMHO14P16I9YYyEAh8A4WBRbtpBQEr3Iyr5gh5ZP2PKxhsse1En8VMSA4G2ukmvLl-7FWp7MlhI"/>
+</div>
+</div>
+<!-- Right Causes Details -->
+<div class="lg:col-span-7 space-y-6">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Our Causes</span>
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
+            Building a Just and Sustainable Future
+          </h2>
+<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+            By addressing interconnected social and environmental issues, we strive to create inclusive communities and lasting positive change worldwide.
+          </p>
+<!-- Causes Two Column Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+<!-- Cause Card 1 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+<div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-brand-yellow text-xl mb-4">
+<i class="fa-solid fa-venus-mars"></i>
+</div>
+<h4 class="text-lg font-bold text-brand-dark mb-2">Women Empowerment</h4>
+<p class="text-xs sm:text-sm text-brand-muted">Gender equality and independence by supporting women leadership and entrepreneurship.</p>
+</div>
+<!-- Cause Card 2 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+<div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-brand-yellow text-xl mb-4">
+<i class="fa-solid fa-notes-medical"></i>
+</div>
+<h4 class="text-lg font-bold text-brand-dark mb-2">Healthcare &amp; Wellbeing</h4>
+<p class="text-xs sm:text-sm text-brand-muted">Improving community health through medical outreach, nutrition and hygiene kits.</p>
+</div>
+</div>
+<div class="pt-2">
+<a class="text-xs font-bold uppercase tracking-wider text-brand-dark hover:text-brand-yellow transition-colors" href="#donate-section">
+              View all actions <i class="fa-solid fa-arrow-right ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: CausesSection -->
+<!-- BEGIN: ProcessStepsSection -->
+<section class="py-20 lg:py-28 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
+          From Planning to Action, Every Step Counts
+        </h2>
+</div>
+<!-- 3 Steps Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<!-- Step 1 -->
+<div class="relative bg-brand-lightBg rounded-3xl p-8 border border-slate-100 flex flex-col justify-between overflow-hidden">
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-full bg-brand-yellow/20 flex items-center justify-center text-brand-yellow text-2xl mb-6">
+<i class="fa-solid fa-magnifying-glass"></i>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Identify Community Needs</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              Communities face thorough research, surveys, and direct engagement to discover baseline challenges.
+            </p>
+</div>
+<div class="text-7xl font-black text-slate-200/80 self-end select-none mt-6">
+            01
+          </div>
+</div>
+<!-- Step 2 -->
+<div class="relative bg-brand-lightBg rounded-3xl p-8 border border-slate-100 flex flex-col justify-between overflow-hidden">
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-full bg-brand-yellow/20 flex items-center justify-center text-brand-yellow text-2xl mb-6">
+<i class="fa-solid fa-handshake"></i>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Plan &amp; Collaborate</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              Our team collaborates with local leaders, volunteers, &amp; partner organizations for shared accountability.
+            </p>
+</div>
+<div class="text-7xl font-black text-slate-200/80 self-end select-none mt-6">
+            02
+          </div>
+</div>
+<!-- Step 3 -->
+<div class="relative bg-brand-lightBg rounded-3xl p-8 border border-slate-100 flex flex-col justify-between overflow-hidden">
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-full bg-brand-yellow/20 flex items-center justify-center text-brand-yellow text-2xl mb-6">
+<i class="fa-solid fa-bullseye"></i>
+</div>
+<h3 class="text-xl font-bold text-brand-dark mb-3">Take Action &amp; Measure</h3>
+<p class="text-sm text-brand-muted leading-relaxed">
+              We implement programs on the ground, monitor results directly, and publish transparent impact logs.
+            </p>
+</div>
+<div class="text-7xl font-black text-slate-200/80 self-end select-none mt-6">
+            03
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ProcessStepsSection -->
+<!-- BEGIN: DeliverImpactBanner -->
+<section class="bg-brand-darkGreen text-white py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left Image Grid with Metric -->
+<div class="lg:col-span-5 relative flex items-center">
+<div class="relative w-full">
+<img alt="Volunteers in action" class="rounded-3xl shadow-xl w-full h-80 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT8uL8_P97KmTC2o_rzmzme6vk070riz5v013nAOhqR1R54G_S_g3HC4v_JL8ITM01yUxDF4Ikf-lC5hnRQ-j6sX3jwMbaM1291hN-zb9AW2XVT06d_QwIr04nPk_0xAui2Qo8oeCC55jIjoLg1l9c_7THcauDHBNV8Bcd43Rk38QIiOkJ_dYx6MfTmDMeM8HBZJXNqthC6d0H9nJv_512F0Ge69hApSpIX34vDpE"/>
+<div class="absolute -bottom-6 left-6 bg-white text-brand-dark rounded-2xl p-4 shadow-xl border flex items-center space-x-3">
+<span class="text-3xl font-extrabold text-brand-yellow">811</span>
+<span class="text-xs font-bold uppercase leading-tight">Projects<br/>Completed</span>
+</div>
+</div>
+</div>
+<!-- Right Text Details -->
+<div class="lg:col-span-7 space-y-6 lg:pl-6">
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Deliver Impact
+          </h2>
+<p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+            Through thoughtfully planned programs and community-led action, we empower individuals, strengthen neighborhoods, and foster lasting positive change one initiative at a time.
+          </p>
+<!-- Badges / Tags -->
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-2 rounded-full bg-brand-yellow text-brand-dark font-bold text-xs">Awareness</span>
+<span class="px-4 py-2 rounded-full bg-white/10 text-white font-medium text-xs">Capacity Building</span>
+<span class="px-4 py-2 rounded-full bg-white/10 text-white font-medium text-xs">Collaboration</span>
+</div>
+<div class="pt-2">
+<a class="inline-flex items-center justify-center bg-brand-yellow hover:bg-brand-yellowHover text-brand-dark font-bold text-sm px-7 py-3 rounded-full transition-all" href="#volunteer">
+              Contact Us <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: DeliverImpactBanner -->
+<!-- BEGIN: TestimonialsSection -->
+<section class="py-20 lg:py-28 bg-brand-lightBg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Our Testimonials</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2 tracking-tight">Voices of Real Peoples</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/70 flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 space-x-1 text-sm mb-4">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+<p class="text-sm text-slate-600 leading-relaxed italic mb-6">
+              "Working with this organization has been life changing. Their commitment to transparency &amp; community development is genuine, and the impact they create is visible at every level."
+            </p>
+</div>
+<div class="flex items-center space-x-3 pt-4 border-t border-slate-100">
+<img alt="Jane Cooper avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUXtqiFunfaUVwihEwZXr_RujLpkm5IRoC0Exr_jiP-oNRbXEikIZUmxwWCWHcpAt7P4V46Cr4jWrD4K3rmSE8sLb4KiKfhBwXs9LV_c_3pHbbc8jGIRYvI9EPB6tTnc9RwmWk84-n7UmtO8XuDGg-k3_39casGBS1M52nNqCjpV97A1pQAygNha4OmOpNkPMENoLC-oTcoJ_M1U8Kpaq6lC2nGimAF_ZWiYnLX_Y"/>
+<div>
+<h5 class="text-sm font-bold text-brand-dark leading-tight">Jane Cooper</h5>
+<span class="text-xs text-slate-400">Long-Term Supporter</span>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/70 flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 space-x-1 text-sm mb-4">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+<p class="text-sm text-slate-600 leading-relaxed italic mb-6">
+              "From education programs to women empowerment initiatives, every project is thoughtfully planned and responsibly executed. It's inspiring to be part of something so meaningful."
+            </p>
+</div>
+<div class="flex items-center space-x-3 pt-4 border-t border-slate-100">
+<img alt="Joseph Willson avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwLIE7KaUh-L3J-oQmr3QHELcx105RgoE7KFz8K45CgJFVtXj9hnJJdf777k3yIa6j2gOL7NxLwYMcN1a9yhySdagBir2vbVlH4fotLDwocvGkt7XqE3yCWkae15HYApDgi2OUFuy6URj4fEP_B8F2O5JbtgcyLwRxBbVRlqKb1xpuYCwGJm_oy3RfLHIimH8CV2nmAhU-9AMQI0DSBzBiKn8_oivlh6OOOXnoTNA"/>
+<div>
+<h5 class="text-sm font-bold text-brand-dark leading-tight">Joseph Willson</h5>
+<span class="text-xs text-slate-400">Local Partner</span>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/70 flex flex-col justify-between">
+<div>
+<div class="flex text-amber-400 space-x-1 text-sm mb-4">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+<p class="text-sm text-slate-600 leading-relaxed italic mb-6">
+              "When this organization started working in our area, we honestly expected change. The education &amp; health programs have helped children stay in school &amp; our families stay healthy."
+            </p>
+</div>
+<div class="flex items-center space-x-3 pt-4 border-t border-slate-100">
+<img alt="Bessie Cooper avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJapHeptQ9pvVTpwxv6aPOSCKkGWIyYjlfjAk9v8xKld86-BdYfOvOSQH1Ad_az1F2Z0nGutPLZ2UUsfmdBcrzff7OBc-2cf39R_RuFHdZ_jzIrrkBi6F9dY-LXWirLav8qntCKowGZai8Iw4QqM4Rz9Q0gNJztJyVB5feZaGCTJfGQGRP23X_AzrbBLtvB6jNDzk7gImPe9kSHMjumDj0WpF2b4MuYDBhZyvR2C4"/>
+<div>
+<h5 class="text-sm font-bold text-brand-dark leading-tight">Bessie Cooper</h5>
+<span class="text-xs text-slate-400">Local Resident</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TestimonialsSection -->
+<!-- BEGIN: DualVolunteerAndDonationSection -->
+<section class="py-20 lg:py-28 bg-white" id="donate-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Left: Interactive Donation Calculator Card -->
+<div class="lg:col-span-6 bg-brand-lightBg border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-lg" data-purpose="donation-calculator">
+<div class="text-center mb-6">
+<h3 class="text-xl sm:text-2xl font-black text-brand-dark">How much would you like to donate today?</h3>
+<p class="text-xs sm:text-sm text-brand-muted mt-2">All donations directly impact our organization and help us further our mission.</p>
+</div>
+<!-- Currency selection header -->
+<div class="flex items-center justify-between text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
+<span>Donation Amount *</span>
+<span class="bg-white px-2 py-0.5 rounded border border-slate-200 text-slate-700">USD $</span>
+</div>
+<!-- Preset Amount Buttons -->
+<div class="grid grid-cols-1 gap-2.5 mb-4" id="donation-options">
+<button class="donation-btn w-full py-3 rounded-xl border border-brand-yellow bg-brand-yellow text-brand-dark font-black text-sm transition-all shadow-sm" data-amount="10.00" type="button">
+              $10.00
+            </button>
+<button class="donation-btn w-full py-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-brand-yellow font-bold text-sm transition-all" data-amount="25.00" type="button">
+              $25.00
+            </button>
+<button class="donation-btn w-full py-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-brand-yellow font-bold text-sm transition-all" data-amount="50.00" type="button">
+              $50.00
+            </button>
+<button class="donation-btn w-full py-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-brand-yellow font-bold text-sm transition-all" data-amount="100.00" type="button">
+              $100.00
+            </button>
+<button class="donation-btn w-full py-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-brand-yellow font-bold text-sm transition-all" data-amount="250.00" type="button">
+              $250.00
+            </button>
+<button class="donation-btn w-full py-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:border-brand-yellow font-bold text-sm transition-all" data-amount="500.00" type="button">
+              $500.00
+            </button>
+</div>
+<!-- Custom Amount Input -->
+<div class="mb-6">
+<input class="w-full rounded-xl border-slate-300 py-3 text-sm focus:border-brand-yellow focus:ring-brand-yellow text-center font-bold" id="custom-donation" placeholder="Enter custom amount" type="number"/>
+</div>
+<!-- Submit CTA -->
+<button class="w-full bg-brand-yellow hover:bg-brand-yellowHover text-brand-dark font-black py-4 rounded-xl shadow-md transition-all uppercase tracking-wider text-sm flex items-center justify-center space-x-2" type="button">
+<span>Donate Now</span>
+<i class="fa-solid fa-arrow-right text-xs"></i>
+</button>
+<p class="text-center text-[11px] text-slate-400 mt-4 flex items-center justify-center">
+<i class="fa-solid fa-lock mr-1.5 text-brand-yellow"></i> 100% Secure Donation with 256-bit Encryption
+          </p>
+</div>
+<!-- Right: Become A Volunteer Content -->
+<div class="lg:col-span-6 space-y-6 lg:pl-6" id="volunteer">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Join As A Volunteer</span>
+<h2 class="text-3xl sm:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight">
+            Become A Volunteer
+          </h2>
+<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+            Join us in creating positive change. As a volunteer, you can contribute your skills and time meaningful initiatives, support communities directly, and be part of a compassionate network committed to building a safer, stronger, and more inclusive society.
+          </p>
+<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+            Be part of something bigger. As a volunteer you'll work alongside passionate individuals to support communities, address real needs, and inspire change.
+          </p>
+<!-- Quick Volunteer Signup Mini-Form -->
+<form class="space-y-4 pt-4" onsubmit="event.preventDefault(); alert('Thank you for registering as a volunteer!');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input class="w-full rounded-xl border-slate-200 py-3 text-sm focus:border-brand-yellow focus:ring-brand-yellow" placeholder="Full Name *" required="" type="text"/>
+<input class="w-full rounded-xl border-slate-200 py-3 text-sm focus:border-brand-yellow focus:ring-brand-yellow" placeholder="Email Address *" required="" type="email"/>
+</div>
+<textarea class="w-full rounded-xl border-slate-200 py-3 text-sm focus:border-brand-yellow focus:ring-brand-yellow" placeholder="Tell us how you'd like to help..." rows="3"></textarea>
+<button class="inline-flex items-center justify-center bg-brand-dark hover:bg-brand-forest text-white font-bold text-sm px-8 py-3.5 rounded-full transition-all" type="submit">
+              Submit Application <i class="fa-solid fa-paper-plane ml-2 text-xs"></i>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: DualVolunteerAndDonationSection -->
+<!-- BEGIN: BlogAndInsightsSection -->
+<section class="py-20 bg-brand-lightBg border-t border-slate-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="text-xs font-bold uppercase tracking-wider text-brand-forest">Latest Blogs</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2 tracking-tight">Insights, Stories &amp; Impact</h2>
+<p class="text-sm text-brand-muted mt-2">Read real stories from the field, community experiences, and thoughtful perspectives that reflect our mission and impact.</p>
+</div>
+<!-- Carousel / Dots Indicator -->
+<div class="flex justify-center items-center space-x-2">
+<span class="w-2.5 h-2.5 rounded-full bg-brand-yellow"></span>
+<span class="w-2 h-2 rounded-full bg-slate-300"></span>
+<span class="w-2 h-2 rounded-full bg-slate-300"></span>
+<span class="w-2 h-2 rounded-full bg-slate-300"></span>
+</div>
+</div>
+</section>
+<!-- END: BlogAndInsightsSection -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-brand-darkGreen text-white pt-20 pb-10 border-t border-white/10" id="footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Footer Top Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-16 border-b border-white/10">
+<!-- Column 1: Brand Info -->
+<div class="lg:col-span-4 space-y-4">
+<a class="flex items-center space-x-2.5" href="#">
+<span class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-brand-dark font-black text-2xl">
+<i class="fa-solid fa-hands-holding-child"></i>
+</span>
+<span class="text-2xl font-bold tracking-tight text-white">Aashik<span class="text-brand-yellow">.</span></span>
+</a>
+<p class="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            We've gathered answers to the questions we hear most, making it easy for you to learn about our work, values, and the impact.
+          </p>
+</div>
+<!-- Column 2: Quick Links -->
+<div class="lg:col-span-2 space-y-3">
+<h4 class="text-sm font-bold text-white uppercase tracking-wider">Quick Links</h4>
+<ul class="space-y-2 text-xs sm:text-sm text-zinc-400">
+<li><a class="hover:text-brand-yellow transition-colors" href="#hero">Home</a></li>
+<li><a class="hover:text-brand-yellow transition-colors" href="#about">About Us</a></li>
+<li><a class="hover:text-brand-yellow transition-colors" href="#services">Our Services</a></li>
+<li><a class="hover:text-brand-yellow transition-colors" href="#programs">Blogs</a></li>
+<li><a class="hover:text-brand-yellow transition-colors" href="#footer">Contact Us</a></li>
+</ul>
+</div>
+<!-- Column 3: Our Programs -->
+<div class="lg:col-span-3 space-y-3">
+<h4 class="text-sm font-bold text-white uppercase tracking-wider">Our Programs</h4>
+<ul class="space-y-2 text-xs sm:text-sm text-zinc-400">
+<li><a class="hover:text-brand-yellow transition-colors" href="#programs">Health &amp; Wellness Outreach</a></li>
+<li><a class="hover:text-brand-yellow transition-colors" href="#programs">Human Rights Advocacy</a></li>
+<li><a class="hover:text-brand-yellow transition-colors" href="#programs">Disaster Relief &amp; Recovery</a></li>
+<li><a class="hover:text-brand-yellow transition-colors" href="#programs">Clean Water in Sanitation</a></li>
+<li><a class="hover:text-brand-yellow transition-colors" href="#programs">Environmental Awareness</a></li>
+</ul>
+</div>
+<!-- Column 4: Location & Socials -->
+<div class="lg:col-span-3 space-y-4">
+<h4 class="text-sm font-bold text-white uppercase tracking-wider">Our Location</h4>
+<p class="text-xs sm:text-sm text-zinc-400 flex items-start space-x-2">
+<i class="fa-solid fa-location-dot text-brand-yellow mt-1"></i>
+<span>3832 Preston Rd. Inglewood, Maine 98380</span>
+</p>
+<h5 class="text-xs font-bold uppercase tracking-wider text-white pt-2">Follow Us On Socials:</h5>
+<div class="flex items-center space-x-3 text-slate-300">
+<a aria-label="Twitter" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all" href="#">
+<i class="fa-brands fa-x-twitter text-sm"></i>
+</a>
+<a aria-label="Facebook" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all" href="#">
+<i class="fa-brands fa-facebook-f text-sm"></i>
+</a>
+<a aria-label="Instagram" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all" href="#">
+<i class="fa-brands fa-instagram text-sm"></i>
+</a>
+<a aria-label="LinkedIn" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all" href="#">
+<i class="fa-brands fa-linkedin-in text-sm"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Footer Middle: Newsletter & Direct Contact -->
+<div class="py-10 border-b border-white/10 flex flex-wrap items-center justify-between gap-6">
+<!-- Newsletter Form -->
+<form class="flex w-full md:w-auto items-center" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+<input class="bg-white/5 border border-white/20 rounded-l-full py-3 px-5 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-brand-yellow w-64 sm:w-80" placeholder="Enter Email Address*" required="" type="email"/>
+<button class="bg-brand-yellow text-brand-dark font-bold text-sm px-6 py-3 rounded-r-full hover:bg-brand-yellowHover transition-colors" type="submit">
+            Subscribe <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+</button>
+</form>
+<!-- Direct Contact Pills -->
+<div class="flex flex-wrap items-center gap-6">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-white/10 text-brand-yellow flex items-center justify-center text-base">
+<i class="fa-solid fa-envelope"></i>
+</div>
+<div>
+<span class="block text-[10px] uppercase text-zinc-400 font-bold">Email Address</span>
+<a class="text-xs sm:text-sm font-semibold text-white hover:text-brand-yellow" href="mailto:info@domainname.com">info@domainname.com</a>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center text-base">
+<i class="fa-solid fa-phone"></i>
+</div>
+<div>
+<span class="block text-[10px] uppercase text-zinc-400 font-bold">Phone Number</span>
+<a class="text-xs sm:text-sm font-semibold text-white hover:text-brand-yellow" href="tel:+1234567789">+1 (234) 567 - 789</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Copyright Bar -->
+<div class="pt-8 text-center text-xs text-zinc-400">
+<p>Copyright © 2026 Aashik. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<!-- BEGIN: FloatingScrollTopButton -->
+<button aria-label="Scroll to top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-brand-yellow text-brand-dark shadow-xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:scale-110" id="scroll-to-top">
+<i class="fa-solid fa-arrow-up text-sm"></i>
+</button>
+<!-- END: FloatingScrollTopButton -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="site-interactions">
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Preloader dismissal
+      const preloader = document.getElementById('preloader');
+      window.addEventListener('load', () => {
+        if (preloader) {
+          preloader.classList.add('opacity-0');
+          setTimeout(() => preloader.style.display = 'none', 500);
+        }
+      });
+      // Fallback preloader dismissal after 1.5 seconds if load event already fired
+      setTimeout(() => {
+        if (preloader && preloader.style.display !== 'none') {
+          preloader.classList.add('opacity-0');
+          setTimeout(() => preloader.style.display = 'none', 500);
+        }
+      }, 1500);
+
+      // 2. Mobile Menu Toggle
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      if (toggleBtn && mobileNav) {
+        toggleBtn.addEventListener('click', () => {
+          mobileNav.classList.toggle('hidden');
+        });
+      }
+
+      // 3. Scroll To Top Button
+      const scrollTopBtn = document.getElementById('scroll-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+          scrollTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+        } else {
+          scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+          scrollTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+      });
+      scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 4. Donation Option Selector Interactivity
+      const donationButtons = document.querySelectorAll('.donation-btn');
+      const customInput = document.getElementById('custom-donation');
+
+      donationButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Deselect all
+          donationButtons.forEach(b => {
+            b.classList.remove('bg-brand-yellow', 'text-brand-dark', 'font-black', 'border-brand-yellow');
+            b.classList.add('bg-white', 'text-slate-700', 'font-bold', 'border-slate-200');
+          });
+          // Select clicked
+          btn.classList.add('bg-brand-yellow', 'text-brand-dark', 'font-black', 'border-brand-yellow');
+          btn.classList.remove('bg-white', 'text-slate-700', 'font-bold', 'border-slate-200');
+          if (customInput) customInput.value = '';
+        });
+      });
+
+      if (customInput) {
+        customInput.addEventListener('input', () => {
+          if (customInput.value.trim() !== '') {
+            donationButtons.forEach(b => {
+              b.classList.remove('bg-brand-yellow', 'text-brand-dark', 'font-black', 'border-brand-yellow');
+              b.classList.add('bg-white', 'text-slate-700', 'font-bold', 'border-slate-200');
+            });
+          }
+        });
+      }
+    });
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>
